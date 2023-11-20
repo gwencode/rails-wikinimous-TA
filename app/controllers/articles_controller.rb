@@ -26,13 +26,15 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to article_path(@article), notice: 'Article was successfully updated.'
+      redirect_to article_path(@article)
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @article.destroy
+    redirect_to root_path
   end
 
   private
