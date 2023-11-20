@@ -1,0 +1,13 @@
+<div class="col-8 mx-auto">
+    <h1 class="text-primary">
+      <%= @article.title %>
+      <%= link_to raw("<i class='fa-solid fa-pen-to-square'></i>"),
+        edit_article_path(@article), class:"icon-link"
+      %>
+      <%= link_to raw("<i class='fa-solid fa-trash-can'></i>"),
+        article_path(@article),  class:"icon-link",
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </h1>
+    <p><%= @article.content %></p>
+</div>
