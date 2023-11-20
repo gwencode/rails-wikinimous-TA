@@ -1,0 +1,5 @@
+<%= link_to raw("<i class='fa-solid fa-arrow-left'></i> Back"), article_path(@article), class: "btn btn-light" %>
+
+<h1>Edit article "<%= @article.title %>"</h1>
+
+<%= render "form", article: @article %>
